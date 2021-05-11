@@ -1,0 +1,39 @@
+{
+  "menu": [{
+    "id": "generator",
+    "label": "生成器",
+    "iconPath": "",
+    "description": "",
+    "collapsibleState": 1,
+    "children": [{
+      "command": "",
+      "id": "psd2ChannelH5",
+      "label": "psd生成预约页",
+      "iconPath": "",
+      "description": "",
+      "tooltip": "",
+      "collapsibleState": 0
+    },{
+      "command": "lazer.openTemplateConfig",
+      "id": "templateChina",
+      "label": "国内官网",
+      "iconPath": "",
+      "description": "webpack 5",
+      "tooltip": "基于兵人指挥官-官网项目生成的模板",
+      "collapsibleState": 0
+    }]
+  },{
+    "id": "autoCode",
+    "label": "懒人工具",
+    "iconPath": "",
+    "description": "",
+    "collapsibleState": 1,
+    "children": [{
+      "command": "",
+      "id": "gitAutoMerge",
+      "label": "自动合并代码",
+      "iconPath": "",
+      "description": ""
+    }]
+  }]
+}

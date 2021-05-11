@@ -1,51 +1,88 @@
 {
-  "name": "lazer",
+	"name": "lazer",
 	"displayName": "lazer",
 	"description": "lazy boy",
 	"version": "0.0.1",
+	"publisher": "Rainnut",
+	"enableProposedApi": true,
 	"engines": {
-		"vscode": "^1.56.0"
+		"vscode": "^1.52.0"
 	},
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:lazer.helloWorld"
+		"onView:fileExplorer"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "lazer",
+					"title": "lazer",
+					"icon": "src/images/icon.svg"
+				}
+			]
+		},
+		"menus": {
+			"view/title": [
+				{
+					"command": "lazer.refreshEntry",
+					"when": "view == lazer",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "lazer.openTemplateConfig",
+					"when": "view == lazer && viewItem == menuItem",
+					"group": "inline"
+				}
+			]
+		},
 		"commands": [
 			{
-				"command": "lazer.helloWorld",
-				"title": "Hello World"
+				"command": "lazer.refreshEntry",
+				"title": "刷新",
+				"icon": {
+					"light": "src/images/light/refresh.svg",
+					"dark": "src/images/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "lazer.openTemplateConfig",
+				"title": "选择该模板",
+				"icon": {
+					"light": "resources/light/edit.svg",
+					"dark": "resources/dark/edit.svg"
+				}
 			}
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "yarn run package",
-		"compile": "webpack",
-		"watch": "webpack --watch",
-		"package": "webpack --mode production --devtool hidden-source-map",
-		"test-compile": "tsc -p ./",
-		"test-watch": "tsc -watch -p ./",
-		"pretest": "yarn run test-compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"lint": "eslint . --ext .ts,.tsx"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.56.0",
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.0.4",
-		"@types/node": "^12.11.7",
-		"eslint": "^7.19.0",
-		"@typescript-eslint/eslint-plugin": "^4.14.1",
-		"@typescript-eslint/parser": "^4.14.1",
-		"glob": "^7.1.6",
-		"mocha": "^8.2.1",
-		"typescript": "^4.1.3",
-		"vscode-test": "^1.5.0",
-		"ts-loader": "^8.0.14",
-		"webpack": "^5.19.0",
-		"webpack-cli": "^4.4.0"
+		"@types/mkdirp": "^0.5.2",
+		"@types/node": "^12.12.0",
+		"@types/rimraf": "^2.0.2",
+		"@types/vscode": "^1.45.0",
+		"@typescript-eslint/eslint-plugin": "^4.16.0",
+		"@typescript-eslint/parser": "^4.16.0",
+		"eslint": "^7.21.0",
+		"typescript": "^4.2.2"
+	},
+	"dependencies": {
+		"class-transformer": "^0.4.0",
+		"ftp": "^0.3.10",
+		"jsonc-parser": "^0.4.2",
+		"minimist": "^0.2.1",
+		"mkdirp": "^0.5.1",
+		"reflect-metadata": "^0.1.13",
+		"rimraf": "^2.6.2"
 	}
 }
