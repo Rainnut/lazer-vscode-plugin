@@ -14,14 +14,24 @@
 	"activationEvents": [
 		"onView:fileExplorer"
 	],
-	"main": "./dist/extension.js",
+	"main": "./out/extension.js",
 	"contributes": {
 		"viewsContainers": {
 			"activitybar": [
 				{
 					"id": "lazer",
 					"title": "lazer",
-					"icon": "src/images/icon.svg"
+					"icon": "media/icon.svg"
+				}
+			]
+		},
+		"views": {
+			"package-explorer": [
+				{
+					"id": "lazer",
+					"name": "lazer",
+					"icon": "media/dep.svg",
+					"contextualTitle": ""
 				}
 			]
 		},
@@ -48,14 +58,6 @@
 				"icon": {
 					"light": "src/images/light/refresh.svg",
 					"dark": "src/images/dark/refresh.svg"
-				}
-			},
-			{
-				"command": "lazer.openTemplateConfig",
-				"title": "选择该模板",
-				"icon": {
-					"light": "resources/light/edit.svg",
-					"dark": "resources/dark/edit.svg"
 				}
 			}
 		]
