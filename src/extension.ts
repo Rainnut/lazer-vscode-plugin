@@ -1,9 +1,9 @@
 'use strict';
-
 import * as vscode from 'vscode';
 import 'reflect-metadata';
 import { MenuProvider } from './menu';
 import webviewHandler from './webview';
+
 export function activate(context: vscode.ExtensionContext) {
 	// 添加侧边栏
 	const menuProvider = new MenuProvider(vscode.workspace.rootPath);

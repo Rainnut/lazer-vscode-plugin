@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-import * as fs from 'fs';
 import * as path from 'path';
 import { plainToClass } from 'class-transformer';
 import config from './config.json';
@@ -42,7 +41,6 @@ export class MenuProvider implements vscode.TreeDataProvider<MenuItem> {
 		}
 	}
 }
-
 
 export class MenuItem extends vscode.TreeItem {
 	constructor(

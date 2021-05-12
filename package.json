@@ -19,14 +19,14 @@
 		"viewsContainers": {
 			"activitybar": [
 				{
-					"id": "lazer",
+					"id": "lazer-tab",
 					"title": "lazer",
 					"icon": "media/icon.svg"
 				}
 			]
 		},
 		"views": {
-			"package-explorer": [
+			"lazer-tab": [
 				{
 					"id": "lazer",
 					"name": "lazer",
@@ -56,9 +56,13 @@
 				"command": "lazer.refreshEntry",
 				"title": "刷新",
 				"icon": {
-					"light": "src/images/light/refresh.svg",
-					"dark": "src/images/dark/refresh.svg"
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
 				}
+			},
+			{
+				"command": "lazer.openTemplateConfig",
+				"title": "使用该模板"
 			}
 		]
 	},
